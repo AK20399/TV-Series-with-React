@@ -4,7 +4,7 @@ class singleSeries extends Component {
 	render() {
 		return (
 			<div>
-				<p>Single Series</p>
+				<p>Single Series. The id is{this.props.match.params.id}</p>
 			</div>
 		);
 	}
