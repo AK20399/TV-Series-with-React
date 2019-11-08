@@ -4,7 +4,7 @@ import loading from '../../assets/loading.gif';
 function Loader(props) {
 	return (
 		<div>
-			<img src={loading} alt='loading' />
+			<img style={{ width: 200 }} src={loading} alt='loading' />
 		</div>
 	);
 }
