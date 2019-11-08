@@ -6,17 +6,23 @@ class series extends Component {
 		series: [],
 	};
 
-	componentDidMount() {
-		setTimeout(() => {
-			fetch('http://api.tvmaze.com/search/shows?q=girls')
-				.then(response => response.json())
-				.then(json => this.setState({ series: json }));
-		}, 2000);
-	}
+	onSeriesInputChange = e => {
+		fetch(`http://api.tvmaze.com/search/shows?q=${e.target.value}`)
+			.then(response => response.json())
+			.then(json => this.setState({ series: json }));
+	};
+
 	render() {
 		return (
 			<div>
-				<p>The length of series array: {this.state.series.length}</p>
+				{/* <p>The length of series array: {this.state.series.length}</p> */}
+				<div>
+					<input
+						type='text'
+						onChange={this.onSeriesInputChange}
+						placeholder='Enter Series Name'
+					/>
+				</div>
 				<SeriesList list={this.state.series} />
 			</div>
 		);
