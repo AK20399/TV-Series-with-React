@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SeriesList from '../../components/seriesList/index';
+import Loader from '../../components/Loader/index';
 
 class series extends Component {
 	state = {
@@ -30,13 +31,13 @@ class series extends Component {
 						placeholder='Enter Series Name'
 					/>
 				</div>
-				{series.length === 0 && seriesName.trim() === '' && (
+				{!isFetching && series.length === 0 && seriesName.trim() === '' && (
 					<p>Please Enter Series Name</p>
 				)}
-				{series.length === 0 && seriesName.trim() !== '' && (
+				{!isFetching && series.length === 0 && seriesName.trim() !== '' && (
 					<p>No Series has been Found By This Name</p>
 				)}
-				{isFetching === true && <p>.....Loading.....</p>}
+				{isFetching === true && <Loader />}
 				{isFetching === false && <SeriesList list={this.state.series} />}
 			</div>
 		);
