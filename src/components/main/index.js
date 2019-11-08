@@ -7,7 +7,7 @@ function main(props) {
 	return (
 		<Switch>
 			<Route exact path='/' component={Series} />
-			<Route exact path='/series:id' component={SingleSeries} />
+			<Route exact path='/series/:id' component={SingleSeries} />
 		</Switch>
 	);
 }

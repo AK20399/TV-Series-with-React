@@ -4,7 +4,7 @@ class intro extends React.Component {
 	render() {
 		return (
 			<div>
-				<p>{this.props.message}</p>
+				<h4>{this.props.message}</h4>
 			</div>
 		);
 	}

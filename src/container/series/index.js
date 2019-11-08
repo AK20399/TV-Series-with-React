@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Intro from '../../components/intro/index';
 import SeriesList from '../../components/seriesList/index';
 import Loader from '../../components/Loader/index';
+import './index.css';
 
 class series extends Component {
 	state = {
@@ -34,10 +35,10 @@ class series extends Component {
 					/>
 				</div>
 				{!isFetching && series.length === 0 && seriesName.trim() === '' && (
-					<p>Please Enter Series Name</p>
+					<h4>Please Enter Series Name</h4>
 				)}
 				{!isFetching && series.length === 0 && seriesName.trim() !== '' && (
-					<p>No Series has been Found By This Name</p>
+					<h4>No Series has been Found By This Name</h4>
 				)}
 				{isFetching === true && <Loader />}
 				{isFetching === false && <SeriesList list={this.state.series} />}
